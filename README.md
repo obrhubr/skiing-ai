@@ -18,3 +18,6 @@ improve the model:
  - augment training data (not too helpful +/-0.01)
  - use more data from the available sources 
  - change model architecture
+	- try to use classification model (https://keras.io/examples/timeseries/timeseries_classification_from_scratch/)
+ - generate datasets with different context sizes
+ - try hyperparameter tuning (https://keras.io/guides/keras_tuner/getting_started/)
