@@ -2,3 +2,4 @@ data/test/*
 data/train/*
 !data/test/test.csv
 !data/train/train.csv
+__pycache__
