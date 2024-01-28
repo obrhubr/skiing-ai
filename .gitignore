@@ -3,3 +3,4 @@ data/train/*
 !data/test/test.csv
 !data/train/train.csv
 __pycache__
+map.html
