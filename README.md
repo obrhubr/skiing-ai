@@ -1,23 +1,21 @@
- - combine data to get 3 things:
-	- rotational data
-		- determine where down is (using the gravity + rotation to shift coordinate system into x,y,z relative to earth)
-		- calibrate rotation with that
-	- get acceleration without gravity (accelerometer - gravity)
-	- timestamps annotated with lift or piste, to get initial data
+# Skiing-AI
 
+View the corresponding article on my github pages site [obrhubr.github.io](https://obrhubr.github.io).
 
- - create ai training data:
-	- combine the rotation + accel + gps to get training input data
-	- try out different model types to predict skiing
-	- try out different time intervals
+### How to get data for your own training?
 
- - create a visualisation
-	- use the skiing data to annotate gps data with color
+Use the awesome [Sensor Logger App](https://github.com/tszheichoi/awesome-sensor-logger) that is available for both Android and iOS. Choose accelerometer, gyrometer and GPS data for logging and press start. Then hit the slopes and worry about data science later.
 
-improve the model:
- - augment training data (not too helpful +/-0.01)
- - use more data from the available sources 
- - change model architecture
-	- try to use classification model (https://keras.io/examples/timeseries/timeseries_classification_from_scratch/)
- - generate datasets with different context sizes
- - try hyperparameter tuning (https://keras.io/guides/keras_tuner/getting_started/)
+### How to run the project?
+
+Create a `data` directory here, and add `train` and `test` to it. 
+Then, export your data from the [Data Logger App](https://github.com/tszheichoi/awesome-sensor-logger) in `csv format`, both training and test data.
+Put the zip files for each in their corresponding directories, renaming the files to `data.zip`.
+
+First, open `data_wrangle.ipynb` and run the scripts to extract the data and reshape it. To label it, use `data_label.ipynb`, making sure to correctly edit the `json` object containing the labels with your own data. Then use `data_prepare.ipynb` to create an actual dataset.
+
+You should now have multiple files called `train_100.csv` and `train_quat_400.csv` in your data folders. To train your model on them, use the notebook `model_train.ipynb`, making sure to load the right dataset with the right values for `channel` and `datapoints` (6 channels if you use 6 features from the sensors, 400 datapoints if you choose `train_400.csv` for example).
+
+To get the predictions, use `model_predict.ipynb`.
+
+All other notebooks were experiments used to optimise the model.
