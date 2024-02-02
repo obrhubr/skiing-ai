@@ -1,3 +1,8 @@
+<p align="center">
+	<img alt="Logo" src=".github/logo/logo.png" data-canonical-src=".github/logo/logo.png" width="200"/>
+</p>
+
+
 # Skiing-AI
 
 View the corresponding article on my github pages site [obrhubr.github.io](https://obrhubr.github.io).
