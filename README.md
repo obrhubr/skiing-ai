@@ -5,7 +5,7 @@
 
 # Skiing-AI
 
-View the corresponding article on my github pages site [obrhubr.github.io](https://obrhubr.github.io).
+(View the blogpost at [obrhubr.org/skiing-ai](https://obrhubr.org/skiing-ai).)
 
 ### How to get data for your own training?
 
